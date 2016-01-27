@@ -1,0 +1,63 @@
+/*
+*  Jockstrap Functions
+*
+*  Helpers to compile the grids using SCSS
+*
+*  @created    11/11/15
+*  @copyright  24 Digital – 2015
+*
+*/
+
+
+// function to easily grab maps (array) values
+@function getVal($key) {
+  @if map-has-key($values, $key) {
+    @return map-get($values, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $values.";
+  @return null;
+}
+
+
+// function to reverse maps (arrays)
+@function mapReverse ($map) {
+    $result: null;
+
+    @if type-of($map) == "map" {
+        $keys: map-keys($map);
+        $map-reversed: ();
+        
+        @for $i from length($keys) through 1 {
+            $map-reversed: map-merge(
+                $map-reversed,
+                (nth($keys, $i): map-get($map, nth($keys, $i)))
+            );
+        }
+
+        @if type-of($map-reversed) == "map" {
+            $result: $map-reversed;
+        } @else {
+            @warn 'There was an error reversing the order of "#{$map}"';
+        }
+    } @else {
+        @warn '"#{$map}" is not a valid map';
+    }
+
+    @return $result;
+}
+
+// helper for printing units with variables
+@function pV($var, $unit, $negative : false) {
+
+   $var : $var + $unit;
+
+   @if($negative == true) {
+      
+      $var : '-' + $var;
+
+   }
+
+   @return $var;
+
+}

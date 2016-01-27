@@ -1,0 +1,25 @@
+/* ==========================================================================
+   settings.scss - setup project settings and vars
+   ========================================================================== */
+
+/* Framework Setup
+ ========================================================================== */
+$use-jockstrap: true;
+
+
+/* Colours
+  ========================================================================== */
+$col-brand--primary: #ccc;
+$col-brand--dark: #000;
+$col-brand--light: #fff;
+
+
+/* Font Families
+ ========================================================================== */
+$ff-brand--heading: "font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif";
+$ff-brand--paragraph: "font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif";
+
+/* Breakpoints - Min widths
+  ========================================================================== */
+$bp-tablet: 768px;
+$bp-desktop: 1180px;

@@ -1,0 +1,36 @@
+/* ==========================================================================
+   jockstrap.scss - Wordpress Starter Kit
+   ========================================================================== */
+
+/* Only use jockstrap if it has been set as true in _settings.scss */
+@if $use-jockstrap == true{
+
+
+
+} //endif
+
+
+// vars
+$values : (
+	container_w :  0,
+	column_w 	: 103,
+	gutter_w 	: 30,
+	columns		: 12,
+);
+
+// breakpoint setup
+$media : (
+	desktop : 1,
+	tablet- : 768px,
+	phone-: 480px
+);
+
+
+/* Import Jockstrap Elements */
+@import "jockstrap-build/functions";
+@import "jockstrap-build/mixins";
+@import "jockstrap-build/grid";
+@import "jockstrap-build/typography";
+@import "jockstrap-build/wordpress";
+@import "jockstrap-build/animation";
+@import "jockstrap-build/helpers";

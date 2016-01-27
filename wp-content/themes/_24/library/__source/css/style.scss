@@ -1,0 +1,39 @@
+/* ==========================================================================
+   style.scss - imports settings & project specific styles
+   ========================================================================== */
+
+
+/**
+*
+* Common Styles
+*
+* Include common css libraries we use across most sites.
+*
+* These are contained in the bower_components folder
+*
+* If you don't have that folder, read the readme and get it installed
+* 
+* 
+*/
+
+// Normalize
+@import "../bower_components/normalize-scss/normalize";
+// Font Awesome
+@import "../bower_components/fontawesome/scss/font-awesome";
+// Flexslider
+@import "../bower_components/flexslider/flexslider.css";
+
+
+/**
+* 
+* Project Base Styles
+* 
+*/
+
+@import "settings";
+@import "jockstrap.css/jockstrap";
+@import "project.css/wordpress";
+@import "project.css/24-starter";
+@import "project.css/slider";
+@import "project.css/forms";
+@import "project.css/navigation"

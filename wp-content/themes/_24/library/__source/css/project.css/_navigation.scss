@@ -1,0 +1,32 @@
+/* 
+==========================================================================
+   navigation.scss - Navigation styles
+========================================================================== 
+*/
+
+// Top Level Nav
+.menu-primary-menu-container .menu {
+    
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 100%;
+    list-style: none;
+
+    // Default link containers
+    li {
+        float: left;
+        margin-right: 25px;
+    }
+
+    // Default links
+    a {
+        text-decoration: none;
+    }
+
+    // Hide nested menus
+    ul {
+        display: none;
+    }
+
+}

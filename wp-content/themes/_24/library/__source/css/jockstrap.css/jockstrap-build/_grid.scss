@@ -1,0 +1,93 @@
+/*
+*  Jockstrap
+*
+*  A super awesome CSS column framework for the modern day responsive nested needs!
+*
+*  @created    24/07/13
+*  @copyright  twenty4 2013
+*
+*/
+
+
+// calculate container width and merge with values array
+$calc   : ( getVal(column_w) * getVal(columns) ) + ( getVal(gutter_w) * getVal(columns) ) - getVal(gutter_w);
+$values : map-merge($values, (container_w: $calc));
+
+
+// calculations that we'll need to output the css
+$row : getVal(container_w) + getVal(gutter_w);
+$column_p : ( getVal(column_w) / $row) * 100;
+$gutter_p : ( getVal(gutter_w) / $row) * 100;
+$row_p : ( $row / getVal(container_w) ) * 100;
+$gutter_half  : $gutter_p / 2;
+
+/*--------------------------------------------------------------------------
+*
+*  Overarching widths and spacing
+*  
+*-------------------------------------------------------------------------*/
+
+// container width
+.container {
+   width: 94%;
+   max-width: #{getVal(container_w)}px;
+   margin: 0 auto;
+}
+
+// helpful clearing class
+.clear {
+   display: block;
+   clear: both;
+}
+
+// row class
+.row {
+   width: #{pV($row_p, '%')};
+   margin-left: #{pV($gutter_half, '%', true)};
+}
+
+// slightly borrowed – after clearer for rows
+.row:after {
+  display: block;
+  clear: both;
+  content: ' ';
+  width: 100%;
+}
+
+// standard margin for all columns
+[class*="col-"] {
+   float:left;
+   margin: 0 #{pV($gutter_half, '%')};
+   min-height: 1px;
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*  Run the Grid / columns mixin
+*  
+*-------------------------------------------------------------------------*/
+
+// Note: Has to repeat logic, because SCSS – cannot bust an echo @media query
+// within an if statement
+
+@each $device, $breakpoint in $media {
+
+   @if ($device == desktop)  {
+
+      $device : '';
+   
+      @include output_grid($device)
+
+   } @else {
+
+      @media( max-width: #{$breakpoint} ) {
+
+         @include output_grid($device);
+
+      }
+
+   }
+
+}
+

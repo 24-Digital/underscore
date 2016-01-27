@@ -1,0 +1,27 @@
+{
+  "name": "_24",
+  "version": "0.0.0",
+  "authors": [
+    "Dan Riddell <dan@24digital.com.au>"
+  ],
+  "description": "_24 Wordpress theme components",
+  "license": "MIT",
+  "homepage": "http://24digital.com.au",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "normalize-css": "~3.0.3",
+    "underscore": "~1.8.3",
+    "handlebars.js": "~4.0.3",
+    "flexslider": "~2.5.0",
+    "fancybox": "~2.1.5",
+    "normalize-scss": "~3.0.3",
+    "normalize.scss": "~3.0.3"
+  }
+}

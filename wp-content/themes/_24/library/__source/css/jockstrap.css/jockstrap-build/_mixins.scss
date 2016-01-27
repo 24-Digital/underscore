@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------------------
+*
+*  Grid Loop / Columns Loop Mixin
+*  
+*-------------------------------------------------------------------------*/
+
+@mixin output_grid($device) {
+
+   // vars
+   $indent : '';
+   $widths : ();
+
+   // Loop through the outer columns and print the percentages
+   @for $i from 1 through getVal(columns) {
+
+      // width must contain gutters
+      $this_w : ( getVal(column_w) * $i ) + ( getVal(gutter_w) * ( $i - 1 ) );
+      $this_p : ( $column_p * $i ) + ( $gutter_p * ( $i - 1 ) );
+
+      // output to CSS
+      .#{$device}col-#{$i} { width: #{pV($this_p, '%')}; }
+
+      // add this width for use later in nested columns
+      $widths : map-merge( $widths , ( col-#{$i} : $this_w ) );
+
+   }
+
+   // reverse the array  for nesting calculations
+   $widths : mapReverse($widths);
+
+   // run the loop to start nesting columns
+   @each $key, $parent_w in $widths {
+      // calculations
+      $parent_row : $parent_w + getVal(gutter_w);
+
+      $parent_column_p : ( getVal(column_w) / $parent_row ) * 100;
+      $parent_gutter_p : ( ( getVal(gutter_w) / $parent_row ) * 100 ) / 2;
+      $parent_row_p : ( $parent_row / $parent_w ) * 100;
+      $parent_row_margin : ( ( getVal(gutter_w) / $parent_w ) * 100 ) / 2 ;
+
+      // output column row class and set the nested columns underneath to the parent gutter
+      .#{$device}#{$key} .row { width: #{pV($parent_row_p, '%')}; margin-left: #{pV($parent_row_margin, '%', true)}; }
+      .#{$device}#{$key} [class*="col-"] { margin: 0 #{pV($parent_gutter_p, '%')}; }
+      
+      
+      // time to loop through all the sub columns (only going 2 deep for now, anymore and you're running some weird grids)
+      @each $key2, $child_w in $widths {
+
+         $nested_width : $child_w / $parent_row  * 100;
+         $nested_width_p : $nested_width;
+         
+         @if( $nested_width <= 100 ) {
+                   
+            .#{$device}#{$key} .#{$device}#{$key2} { width: #{pV($nested_width_p, '%')}; }
+
+         }
+      }
+
+   }
+
+}

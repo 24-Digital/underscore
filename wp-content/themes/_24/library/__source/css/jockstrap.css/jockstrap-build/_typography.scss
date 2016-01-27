@@ -1,0 +1,72 @@
+/* ==========================================================================
+   jockstrap/typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p, li, td, th {
+    line-height: 1.75em;
+}
+
+p, li {
+
+
+}
+
+a {
+
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.no-underline:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0 none;
+    background: #e2e2e2;
+    height: 1px;
+    display: block;
+    margin: 20px 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

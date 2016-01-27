@@ -1,0 +1,135 @@
+/* ==========================================================================
+   jockstrap/helpers
+   ========================================================================== */
+
+/* Image Replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; font-size: 0; line-height: 0; }
+input.ir { border: 0 none; background: none; }
+
+/* Horizontal List */
+.hl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+.hl > li { float: left; display: block; margin: 0; padding: 0; }
+.hl > li.fr { float: right; }
+
+/* Horizontal List: Clearfix */
+.hl:before, .hl:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.hl:after {
+    clear: both;
+}
+
+/* Block List */
+.bl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+.bl > li { display: block; margin: 0; padding: 0; float: none; }
+
+/* Full width */
+img.fw {
+    width: 100%;
+}
+
+/* icon */
+[class^="sprite-"],
+[class*=" sprite-"] {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    background: url(../images/sprite.png);
+    margin: 0;
+}
+
+/* Browser */
+.visible { display: block; visibility: visible; }
+.hidden { display: none; visibility: visible; }
+
+
+/* Float */
+.fl { float: left; }
+.fr { float: right; }
+.fn { float: none; }
+
+/* Align */
+.al { text-align: left; }
+.ar { text-align: right; }
+.ac { text-align: center; }
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .tablet-visible { display: block; }
+    .tablet-hidden { display: none; }
+
+    /* Horizontal List */
+    .tablet-hl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+    .tablet-hl > li { float: left; display: block; margin: 0; padding: 0; }
+    .tablet-hl > li.fr { float: right; }
+
+    /* Block List */
+    .tablet-bl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+    .tablet-bl > li { display: block; margin: 0; padding: 0; float: none; }
+
+    /* Float */
+    .tablet-fl { float: left; }
+    .tablet-fr { float: right; }
+    .tablet-fn { float: none; }
+
+    /* Align */
+    .tablet-al { text-align: left; }
+    .tablet-ar { text-align: right; }
+    .tablet-ac { text-align: center; }
+
+    .tablet-margin { margin-top: 20px !important; }
+
+}
+
+
+/* Phone */
+@media (max-width: 480px) {
+
+    .phone-visible { display: block; }
+    .phone-hidden { display: none; }
+
+    /* Horizontal List */
+    .phone-hl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+    .phone-hl > li { float: left; display: block; margin: 0; padding: 0; }
+    .phone-hl > li.fr { float: right; }
+
+    /* Block List */
+    .phone-bl { padding: 0; margin: 0; list-style: none; display: block; position: relative; }
+    .phone-bl > li { display: block; margin: 0; padding: 0; float: none; }
+
+    /* Float */
+    .phone-fl { float: left; }
+    .phone-fr { float: right; }
+    .phone-fn { float: none; }
+
+    /* Align */
+    .phone-al { text-align: left; }
+    .phone-ar { text-align: right; }
+    .phone-ac { text-align: center; }
+
+    .phone-margin { margin-top: 20px !important; }
+}
+
+/*
+*  Retina
+*/
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+    [class^="sprite-"],
+    [class*=" sprite-"] {
+        background-image: url(../images/sprite@2x.png);
+        background-size: 500px 500px;
+    }
+
+}
